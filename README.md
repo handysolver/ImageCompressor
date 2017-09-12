@@ -3,8 +3,6 @@ ImageCompressor
 
 A simple library that compresses image with user defined height and width and save it to user defined external storage folder path.
 
-[![](https://jitpack.io/v/nguyenhoanglam/ImagePicker.svg)](https://www.jitpack.io/#nguyenhoanglam/ImagePicker)
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ImagePicker-green.svg?style=true)](https://android-arsenal.com/details/1/4072)
 
 
 Download
