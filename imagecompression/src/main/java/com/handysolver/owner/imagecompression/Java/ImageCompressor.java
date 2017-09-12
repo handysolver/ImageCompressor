@@ -47,6 +47,9 @@ public abstract class ImageCompressor {
         }
 
         public void start(ImageCompress imageCompress) {
+            checkPermission(imageCompress);
+        }
+        private void startCompression(ImageCompress imageCompress){
             if(getRealImageFolderPath()!=null && getThumbnailImageFolderPath()!=null){
                 if(getRealImageMaxHeight()==0.0f){
                     setRealImageMaxHeight(GlobalConstant.realImageMaxHeight);
@@ -88,8 +91,6 @@ public abstract class ImageCompressor {
                 Log.d(TAG, "start: ");
                 imageCompress.onFailure(ImageCompress.FAILURE_MESSAGE_1);
             }
-
-            checkPermission();
         }
         public String getRealPathFromURI(Uri uri) {
             String[] projection = { MediaStore.Images.Media.DATA };
@@ -100,9 +101,10 @@ public abstract class ImageCompressor {
             cursor.moveToFirst();
             return cursor.getString(column_index);
         }
-        public void checkPermission(){
+        public void checkPermission(ImageCompress imageCompress){
             marshMallowPermission=new MarshMallowPermission(activity);
             if(marshMallowPermission.checkPermissionForExternalStorage()){
+                startCompression(imageCompress);
                 Log.d("permission access","permission for call access");
 
             }else{
