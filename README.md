@@ -26,7 +26,7 @@ dependencies {
 ```
 
 Usage
---------
+---------
 
 ### Start ImageCompressor
 ```java
