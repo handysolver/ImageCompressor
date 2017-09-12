@@ -28,7 +28,7 @@ dependencies {
 Usage
 --------
 
-### Start ImagePicker
+### Start ImageCompressor
 ```java
  ImageCompressor.create(this)
                 .setImageUriPath(imageUri)                            // set image Uri path
