@@ -51,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
                         .setImageUriPath(imageUri)
                         .setRealImageFolderPath("handysolver/real")
                         .setThumbnailImageFolderPath("handysolver/thumbnail")
+                        .setRealImageMaxWidth(80.0f)
+                        .setRealImageMaxHeight(80.0f)
+                        .setThumbnailImageMaxHeight(612.0f)
+                        .setThumbnailImageMaxWidth(816.0f)
                         .start(new ImageCompress() {
 
                             @Override
@@ -60,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public void onSuccess(ImagePathContainer imagePathContainer) {
-                                Log.d("s", "onSuccess: " +imagePathContainer.getRealImagePath()+"  -   "+imagePathContainer.getThumbnailImagePath());
+                                Log.d("getRealImagePath", "onSuccess: " +imagePathContainer.getRealImagePath());
+                                Log.d("getThumbnailImagePath", "onSuccess: " +imagePathContainer.getRealImagePath());
                             }
                         });
                 //imageView.setImageBitmap(decodeFile(imageStream));
